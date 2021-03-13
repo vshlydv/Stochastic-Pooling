@@ -89,7 +89,7 @@ def stochastic_max_pool_x(x, image_shape, pool_shape = (2, 2), pool_stride = (1,
     # select
     res = (window * prob.reshape((batch, channel, res_r, res_c,  pr, pc))).max(axis=5).max(axis=4)
 
-    return tensor.cast(res, theano.config.floatX)
+    return res
     #tensor.cast() - for type casting the value of the tensor
 
 
